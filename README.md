@@ -33,14 +33,15 @@
 > The following requirements are **strictly mandatory**. Failure to complete any of these may result in significant mark deductions or **0 marks** for the affected section:
 > 
 > 1. **Next.js App Router Architecture**: Strict and justified use of **Server Components** (default) and **Client Components** (`"use client"`). Proper use of `layout.tsx`, `page.tsx`, `error.tsx`, and `loading.tsx`.
-> 2. **Better UI/UX & Responsiveness**: Mobile-first, accessible, and modern design. Must use a utility-first CSS framework (Tailwind CSS) and a component library (e.g., shadcn/ui, Radix UI, or Mantine).
+> 2. **Better UI/UX & Responsiveness**: Mobile-first, accessible, and modern design. Must use a utility-first CSS framework (Tailwind CSS/StyleX) and a component library (e.g., shadcn/ui, Radix UI, or Mantine).
 > 3. **Authentication & Authorization**: Secure login flow, protected routes (middleware), and **role-based UI rendering** (hiding/showing elements based on the 3 distinct roles).
-> 4. **API Implementation & State Management**: Proper data fetching (TanStack Query / SWR or native Next.js caching), global state management (Zustand / Redux Toolkit / Context), loading skeletons, and error boundaries.
-> 5. **Form Handling & Validation**: Use **React Hook Form + Zod** for all forms, ensuring frontend validation matches backend rules.
-> 6. **Commits**: Minimum **20 meaningful** frontend commits with descriptive messages (e.g., `feat: add role-based sidebar`, `fix: resolve hydration mismatch`).
-> 7. **Admin Credentials**: Provide working demo admin email and password for evaluation.
-> 8. **Deployment**: Provide a working live frontend URL (e.g., Vercel, Netlify).
-> 9. **Video Explanation**: Submit a 5–10 minute UI/UX and fullstack integration walkthrough video.
+> 4. **One-Click Role Login**: Your login page must implement a clear, structured layout featuring distinct, one-click "Demo Login" buttons for each of the 3 roles (e.g., Admin, User/Student, Teacher/Provider).
+> 5. **API Implementation & State Management**: Proper data fetching (TanStack Query / SWR or native Next.js caching), global state management (Zustand / Redux Toolkit / Context), loading skeletons, and error boundaries.
+> 6. **Form Handling & Validation**: Use **React Hook Form + Zod** for all forms, ensuring frontend validation matches backend rules.
+> 7. **Commits**: Minimum **20 meaningful** frontend commits with descriptive messages (e.g., `feat: add role-based sidebar`, `fix: resolve hydration mismatch`).
+> 8. **Admin Credentials**: Provide working demo admin email and password for evaluation.
+> 9. **Deployment**: Provide a working live frontend URL (e.g., Vercel, Netlify).
+> 10. **Video Explanation**: Submit a 5–10 minute UI/UX and fullstack integration walkthrough video.
 
 ---
 
@@ -64,63 +65,26 @@
 
 ## 📋 Project Requirements
 
-### 🛠️ Tech Stack
-
-| Category | Technology | Purpose |
-|----------|------------|---------|
-| **Framework** | Next.js (App Router), TypeScript | Server-side rendering, routing, and type safety |
-| **Styling & UI** | Tailwind CSS, shadcn/ui, Framer Motion (optional) | Rapid, responsive, and accessible UI development |
-| **State Management** | TanStack Query (React Query) + Zustand / Context | Server-state caching and global client-state management |
-| **Forms & Validation** | React Hook Form + Zod | Type-safe form handling and client-side validation |
-| **Authentication** | NextAuth.js (Auth.js) or Custom JWT Cookies | Secure session management and protected routes |
-| **Icons & Media** | Lucide React, Next/Image | Optimized icons and image delivery |
-| **Deployment** | Vercel | Seamless frontend deployment with edge network |
-
-### 🎯 Core Project Rules
-
-- **Role-Based UI**: The application must have distinct views or dashboards for **3 fixed primary roles** (e.g., Customer, Provider, Admin). A user must only see what their role permits.
-- **API Integration**: You must connect to a real backend API. Mock data is **NOT** accepted for core workflows.
-- **URL State Management**: Filtering, sorting, and pagination must be reflected in the URL (e.g., `?page=2&status=active`) using `useSearchParams`, allowing users to share links.
-- **Performance**: Use `next/image` for all images, implement skeleton loaders (`loading.tsx`), and avoid unnecessary client-side re-renders.
-- **Error Handling**: Graceful error handling using `error.tsx` and toast notifications (e.g., Sonner or React Hot Toast) for API failures.
+> ⏱️ **Detailed Guidelines:** Please read the complete project requirements, tech stack, and API rules here:  
+> 👉 [Project Requirements & API Guidelines](https://github.com/Apollo-Level2-Web-Dev/B7A7/blob/main/project-requirements.md)
 
 ---
 
 ## 📅 Timeline: 5-Day Work Breakdown
 
-> ⏱️ **Recommended Workload:** 5–8 hours per day. Consistency is key to building a polished UI and maintaining a clean Git history.
+> ⏱️ **Recommended Schedule:** Maintain steady progress to avoid last-minute stress and ensure a clean Git history.  
+> 👉 [View the 5-Day Work Breakdown](https://github.com/Apollo-Level2-Web-Dev/B7A7/blob/main/timeline-breakdown.md)
 
-### 🟢 Day 1 — Planning, Setup & Design System
-- [ ] Define the UI/UX requirements and user flows for all 3 roles.
-- [ ] Initialize Next.js (App Router) + TypeScript + Tailwind CSS project.
-- [ ] Set up UI component library (e.g., shadcn/ui) and define theme/colors.
-- [ ] Create base layouts (`layout.tsx`), responsive sidebars/navbars, and routing structure.
-- [ ] Configure environment variables for API base URLs.
+---
 
-### 🔵 Day 2 — Authentication & Protected Routes
-- [ ] Implement Login, Register, and Logout UI flows.
-- [ ] Set up authentication state (NextAuth or custom JWT cookies).
-- [ ] Create Next.js Middleware (`middleware.ts`) for route protection and role-based redirects.
-- [ ] Build the foundational dashboards for all 3 roles (skeleton/wireframe stage).
+## 🗓️ Submission Deadlines
 
-### 🟡 Day 3 — Core Features & API Integration
-- [ ] Integrate TanStack Query (or native fetching) for data retrieval.
-- [ ] Build core CRUD UI views (e.g., listing resources, viewing details).
-- [ ] Implement **Pagination, Filtering, and Search** with URL state synchronization.
-- [ ] Add loading skeletons (`loading.tsx`) and empty states for all data views.
+| Deadline | Maximum Marks |
+|:---------|:-------------:|
+| **October 10, 2026, 11:59 PM** | 60 Marks |
 
-### 🟠 Day 4 — Forms, Complex Workflows & Optimization
-- [ ] Implement complex forms using React Hook Form + Zod (e.g., multi-step forms, file uploads).
-- [ ] Add optimistic updates for actions like "liking", "status changes", or "comments".
-- [ ] Implement global state (Zustand) for UI-specific states (e.g., sidebar toggle, multi-step wizard data).
-- [ ] Optimize performance: audit bundle size, ensure proper `next/image` usage, and fix any hydration warnings.
-
-### 🔴 Day 5 — Polish, Deployment & Submission
-- [ ] Conduct rigorous UI testing across desktop, tablet, and mobile viewports.
-- [ ] Deploy to Vercel and verify all environment variables and API connections work in production.
-- [ ] Review Git history to ensure **20+ meaningful commits**.
-- [ ] Record the 5–10 minute video walkthrough.
-- [ ] Submit all required links in the assignment portal.
+> [!IMPORTANT]
+> **Note:** There will be **no 50-mark or 30-mark extended deadlines**. To ensure your eligibility and participation in **Job Placement Support** and **Reward Courses**, you must submit your assignment strictly within this deadline. Late submissions will not be accepted or graded.
 
 ---
 
@@ -129,13 +93,15 @@
 Please format your submission exactly like this example:
 
 ```text
-Project Name    : Courier & Logistics Platform
-Frontend Repo   : https://github.com/your-username/courier-frontend
-Live URL        : https://courier-frontend.vercel.app
-Backend API     : https://courier-api.vercel.app (Link to your B7A6 or provided API)
-Demo Video      : https://drive.google.com/file/d/xyz/view
-Admin Email     : admin@courier.com
-Admin Password  : ********
+Project Name            : Courier & Logistics Platform
+Backend Repo            : https://github.com/your-username/courier-backend
+Frontend Repo           : https://github.com/your-username/courier-frontend
+Live Backend Url        : https://courier-api.vercel.app
+Live Frontend URL       : https://courier-frontend.vercel.app
+Backend API             : https://courier-api.vercel.app (Link to your B7A6 or provided API)
+Demo Video              : https://drive.google.com/file/d/xyz/view
+Admin Email             : admin@courier.com
+Admin Password          : ********
 ```
 
 > ⚠️ **Security Warning:** Never submit personal passwords or production secrets. Create dedicated, secure demo credentials specifically for evaluation.
@@ -164,11 +130,5 @@ Admin Password  : ********
 ## 🧭 Project Idea Hub Reference
 
 Your frontend must bring the **B7A6 Backend Project Ideas** to life. Refer to the [B7A6 Idea Hub](https://github.com/Apollo-Level2-Web-Dev/B7A6/blob/main/idea-hub.md) for domain-specific workflows. 
-
-**Frontend-Specific Challenges to Consider:**
-- **Complex Dashboards**: Data visualization (charts/graphs) for Admin roles.
-- **Real-time Feel**: Optimistic UI updates for status changes (e.g., marking a task as "Done" instantly before the server responds).
-- **Multi-step Workflows**: Wizard-style forms for complex creations (e.g., "Create Shipment" with multiple steps).
-- **Advanced Filtering**: Faceted search UI with URL synchronization (e.g., e-commerce style filters).
 
 > 🚀 **Final Goal:** Build a frontend that is not just a "dumb" API consumer. Your project should demonstrate a deep understanding of **Next.js architecture, modern UI/UX principles, robust state management, and seamless fullstack integration**. Build an interface you would be proud to put in your professional portfolio!
