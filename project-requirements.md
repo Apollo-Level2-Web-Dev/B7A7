@@ -17,7 +17,15 @@
 - **Role-Based UI**: The application must have distinct views or dashboards for **3 fixed primary roles** (e.g., Customer, Provider, Admin). A user must only see what their role permits.
 - **API Integration**: You must connect to a real backend API. Mock data is **NOT** accepted for core workflows.
 - **URL State Management**: Filtering, sorting, and pagination must be reflected in the URL (e.g., `?page=2&status=active`) using `useSearchParams`, allowing users to share links.
+- **Visualize Dashboards**: Data visualization (charts/graphs) for Admin roles.
+- - **Advanced Filtering**: Faceted search UI with URL synchronization (e.g., e-commerce style filters).
 - **Performance**: Use `next/image` for all images, implement skeleton loaders (`loading.tsx`), and avoid unnecessary client-side re-renders.
 - **Error Handling**: Graceful error handling using `error.tsx` and toast notifications (e.g., Sonner or React Hot Toast) for API failures.
+
+---
+
+**Frontend-Specific Challenges to Consider:**
+- **Real-time Feel**: Optimistic UI updates for status changes (e.g., marking a task as "Done" instantly before the server responds), you can use tools like tanstack query.
+- **Multi-step Workflows**: Wizard-style forms for complex creations (e.g., "Create Shipment" with multiple steps).
 
 ---
