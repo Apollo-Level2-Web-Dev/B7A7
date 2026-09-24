@@ -5,12 +5,13 @@
 | Category | Technology | Purpose |
 |----------|------------|---------|
 | **Framework** | Next.js (App Router), TypeScript | Server-side rendering, routing, and type safety |
-| **Styling & UI** | Tailwind CSS, shadcn/ui, Framer Motion (optional) | Rapid, responsive, and accessible UI development |
-| **State Management** | TanStack Query (React Query) + Zustand / Context | Server-state caching and global client-state management |
+| **Styling & UI** | Tailwind CSS / StyleX, shadcn/ui, Framer Motion (optional) | Rapid, responsive, and accessible UI development |
+| **State Management** | TanStack Query (React Query) + Zustand / Context (if needed) | Server-state caching and global client-state management |
 | **Forms & Validation** | React Hook Form + Zod | Type-safe form handling and client-side validation |
-| **Authentication** | NextAuth.js (Auth.js) or Custom JWT Cookies | Secure session management and protected routes |
-| **Icons & Media** | Lucide React, Next/Image | Optimized icons and image delivery |
-| **Deployment** | Vercel | Seamless frontend deployment with edge network |
+| **Payment Integration** | Stripe (Checkout/Elements) or SSLCommerz (Test Mode) | Secure, real payment gateway integration (No fake "Cash on Delivery" workflows) |
+| **Authentication** | NextAuth.js (Auth.js) or Custom JWT (Cookies + Middleware) | Secure session management, HTTP-only cookies, and protected route enforcement |
+| **Media** | Next/Image | Optimized icons and image delivery |
+| **Deployment** | Vercel, Netlify, or Cloudflare | Seamless frontend deployment with global edge network and preview URLs |
 
 ### 🎯 Core Project Rules
 
@@ -18,7 +19,7 @@
 - **API Integration**: You must connect to a real backend API. Mock data is **NOT** accepted for core workflows.
 - **URL State Management**: Filtering, sorting, and pagination must be reflected in the URL (e.g., `?page=2&status=active`) using `useSearchParams`, allowing users to share links.
 - **Visualize Dashboards**: Data visualization (charts/graphs) for Admin roles.
-- - **Advanced Filtering**: Faceted search UI with URL synchronization (e.g., e-commerce style filters).
+- **Advanced Filtering**: Faceted search UI with URL synchronization (e.g., e-commerce style filters).
 - **Performance**: Use `next/image` for all images, implement skeleton loaders (`loading.tsx`), and avoid unnecessary client-side re-renders.
 - **Error Handling**: Graceful error handling using `error.tsx` and toast notifications (e.g., Sonner or React Hot Toast) for API failures.
 
