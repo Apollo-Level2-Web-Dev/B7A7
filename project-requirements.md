@@ -25,8 +25,11 @@
 
 ---
 
-**Frontend-Specific Challenges to Consider:**
+**Frontend-Specific Challenges to Consider (Optional):**
 - **Real-time Feel**: Optimistic UI updates for status changes (e.g., marking a task as "Done" instantly before the server responds), you can use tools like tanstack query.
 - **Multi-step Workflows**: Wizard-style forms for complex creations (e.g., "Create Shipment" with multiple steps).
+- **Dark Mode Support**: Implement a seamless light/dark mode toggle using next-themes and Tailwind CSS, ensuring all custom components and charts adapt gracefully.
+- **SEO & Metadata**: Utilize Next.js App Router Metadata API to generate dynamic Open Graph (OG) images, titles, and descriptions for public-facing pages (e.g., individual product or service detail pages).
+- **Accessibility (a11y) First**: Ensure full keyboard navigation, proper ARIA labels, focus management in modals, and sufficient color contrast. Treat accessibility as a requirement, not an afterthought.
 
 ---
