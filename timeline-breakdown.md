@@ -24,8 +24,8 @@
 - [ ] Add loading skeletons (`loading.tsx`), empty states, and global error boundaries (`error.tsx`) with toast notifications for all data views.
 - [ ] Implement at least one **Data Visualization** component (e.g., Recharts/Chart.js) for the Admin/Manager dashboard.
 
-### 🟠 Day 4 — Complex Workflows, Payments & Optimization
-- [ ] Implement complex forms using **React Hook Form / React Form + Zod** (e.g., multi-step wizards, file/image uploads to Cloudinary).
+### 🟠 Day 4 — Complex Workflows, Payments & Optimization *(Updated)*
+- [ ] Implement complex forms using **React Hook Form or `@tanstack/react-form` + Zod** (e.g., multi-step wizards, file/image uploads to Cloudinary).
 - [ ] Add **Optimistic UI updates** for instant feedback actions (e.g., toggling a status, adding to cart, or upvoting).
 - [ ] Implement global client state (Zustand/Context) for UI-specific states (e.g., sidebar toggle, multi-step form data persistence).
 - [ ] **Mandatory:** Integrate the frontend flow for **Stripe or SSLCommerz** (Test Mode), including proper success/cancel redirect handling.
