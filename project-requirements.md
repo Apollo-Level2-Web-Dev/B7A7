@@ -7,7 +7,7 @@
 | **Framework** | Next.js (App Router), TypeScript | Server-side rendering, routing, and type safety |
 | **Styling & UI** | Tailwind CSS / StyleX, shadcn/ui, Framer Motion (optional) | Rapid, responsive, and accessible UI development |
 | **State Management** | TanStack Query (React Query) + Zustand / Context (if needed) | Server-state caching and global client-state management |
-| **Forms & Validation** | React Hook Form + Zod | Type-safe form handling and client-side validation |
+| **Forms & Validation** | React Hook Form / React Form + Zod / Joi | Type-safe form handling and client-side validation |
 | **Payment Integration** | Stripe (Checkout/Elements) or SSLCommerz (Test Mode) | Secure, real payment gateway integration (No fake "Cash on Delivery" workflows) |
 | **Authentication** | NextAuth.js (Auth.js) or Custom JWT (Cookies + Middleware) | Secure session management, HTTP-only cookies, and protected route enforcement |
 | **Media** | Next/Image | Optimized icons and image delivery |
@@ -22,6 +22,49 @@
 - **Advanced Filtering**: Faceted search UI with URL synchronization (e.g., e-commerce style filters).
 - **Performance**: Use `next/image` for all images, implement skeleton loaders (`loading.tsx`), and avoid unnecessary client-side re-renders.
 - **Error Handling**: Graceful error handling using `error.tsx` and toast notifications (e.g., Sonner or React Hot Toast) for API failures.
+
+- ## 🔐 Login Page — One-Click Role Login
+
+The login page should have a clear and structured layout with separate **Demo Login** buttons for each of the 3 roles.
+
+```text
+┌─────────────────────────────────────────────┐
+│                                             │
+│              Welcome Back 👋                │
+│                                             │
+│        Login to your account                │
+│                                             │
+│  ┌───────────────────────────────────────┐  │
+│  │ Email                                 │  │
+│  │ [_______________________________]     │  │
+│  │                                       │  │
+│  │ Password                              │  │
+│  │ [_______________________________]     │  │
+│  │                                       │  │
+│  │          [ 🔐 Login ]                 │  │
+│  └───────────────────────────────────────┘  │
+│                                             │
+│              ─── OR ───                     │
+│                                             │
+│           🚀 Demo Login                     │
+│                                             │
+│  ┌──────────────┐ ┌──────────────┐          │
+│  │ 👨‍💼 Admin     │ │ 👨‍🎓 Student   │          │
+│  │              │ │              │          │
+│  │ [Demo Login] │ │ [Demo Login] │          │
+│  └──────────────┘ └──────────────┘          │
+│                                             │
+│          ┌──────────────────┐               │
+│          │ 👨‍🏫 Teacher       │               │
+│          │                  │               │
+│          │  [Demo Login]    │               │
+│          └──────────────────┘               │
+│                                             │
+└─────────────────────────────────────────────┘
+```
+
+Each **Demo Login** button should automatically authenticate the user with the corresponding demo account and redirect them to the appropriate dashboard.
+
 
 ---
 
