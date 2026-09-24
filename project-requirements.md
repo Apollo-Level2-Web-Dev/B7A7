@@ -85,7 +85,7 @@ These pages must represent the actual functionality of your selected project. Yo
 
 ### Page Technical Requirements
 
-- **Responsive Design**: Mobile-first approach. Every page must work flawlessly on mobile (320px+), tablet (768px+), and desktop (1024px+). Test using DevTools Device Toolbar.
+- **Responsive Design**: Mobile-first approach. Every page must work flawlessly on mobile, tablet, and desktop. Test using DevTools Device Toolbar.
 - **Loading States**: Every data-fetching page must have a **skeleton loader** (`loading.tsx`). Full-page spinners or blank screens are not acceptable.
 - **Empty States**: Every list/table view must show a meaningful empty state (e.g., "No orders found" with an illustration or icon) when there is no data.
 - **Error States**: API failures must show toast notifications (Sonner / React Hot Toast). Page-level crashes must be caught by `error.tsx` boundaries.
