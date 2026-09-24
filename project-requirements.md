@@ -1,34 +1,36 @@
 ## 📋 Project Requirements
 
-### 🛠️ Recommended Tech Stack
+> 💡 **Note:** Read these carefully. While not every single point is strictly fixed, you must follow this general guideline to ensure your project meets expectations.
+
+## 🛠️ Tech Stack
 
 | Category | Technology | Purpose |
 |----------|------------|---------|
-| **Framework** | Next.js (App Router), TypeScript | Server-side rendering, advanced routing, and strict type safety |
-| **Styling & UI** | Tailwind CSS / StyleX, shadcn/ui, Framer Motion *(optional)* | Rapid, responsive, accessible, and animated UI development |
-| **State Management** | TanStack Query + Zustand / Context *(if needed)* | Server-state caching, optimistic updates, and global client-state |
-| **Forms & Validation** | React Hook Form + Zod | Type-safe, performant form handling with schema-based validation |
-| **Payment Integration** | Stripe (Checkout/Elements) or SSLCommerz (Test Mode) | Secure, real payment gateway integration (No fake "Cash on Delivery") |
-| **Authentication** | NextAuth.js (Auth.js) or Custom JWT (Cookies + Middleware) | Secure session management, HTTP-only cookies, and protected routes |
-| **Media & Icons** | `next/image`, Lucide React | Optimized image delivery and consistent, accessible iconography |
-| **Deployment** | Vercel, Netlify, or Cloudflare | Seamless frontend deployment with global edge network and preview URLs |
+| **Framework** | Next.js (App Router), TypeScript | Server-side rendering, routing, and type safety |
+| **Styling & UI** | Tailwind CSS, shadcn/ui | Responsive, accessible, and modern UI development |
+| **State Management** | TanStack Query + Zustand / Context *(if needed)*  | Server-state caching and global client-state management |
+| **Forms & Validation** | React Hook Form / `@tanstack/react-form` + Zod | Type-safe form handling and client-side validation |
+| **Authentication** | NextAuth.js / Custom JWT + Middleware | Secure session management and protected routes |
+| **Payment Integration** | Stripe / SSLCommerz (Test Mode) | Real payment processing with success/cancel flows |
+| **Data Visualization** | Recharts / Chart.js | Admin dashboard charts and analytics |
+| **Media & Icons** | `next/image`, Lucide React | Optimized image delivery and consistent iconography |
+| **Notifications** | Sonner / React Hot Toast | User-friendly toast notifications |
+| **Deployment** | Vercel / Netlify / Cloudflare | Production frontend deployment with edge network |
 
----
+> **Note:** You do not need to use every technology in every project. Choose technologies based on the actual requirements of your specific project.
 
-### 🎯 Core Project Rules
+--- 
 
-> [!IMPORTANT]
-> These rules define the baseline quality of your application. Deviating from these will result in mark deductions.
+## 🎯 Core Project Rules
 
-- **Strict Role-Based UI (RBAC)**: The application must have distinct views or dashboards for **3 fixed primary roles** (e.g., Customer, Provider, Admin). A user must only see and interact with what their role permits.
-- **Real API Integration**: You must connect to a real backend API. Mock data or hardcoded JSON is **NOT** accepted for core workflows.
-- **URL State Synchronization**: Filtering, sorting, and pagination must be reflected in the URL (e.g., `?page=2&status=active`) using `useSearchParams`, allowing users to bookmark or share specific views.
+- **Roles**: Each project must have **3 fixed primary roles** (e.g., Customer, Provider, Admin). Role permissions must be strictly enforced at both route level (Middleware) and UI level (conditional rendering).
+- **Payment Integration**: This is **MANDATORY**. You must integrate **Stripe or SSLCommerz** (Test Mode). Your frontend must handle payment initiation, success redirect, and cancellation redirect. *Cash on Delivery, Pay Later, or fake manual status updates are NOT accepted.*
+- **Real API Only**: You must connect to a real backend API (your B7A6 project or a provided one). Mock data, hardcoded JSON, or placeholder content is **NOT accepted** for any core workflow.
+- **One-Click Demo Login**: Your login page must feature distinct, one-click "Demo Login" buttons for each of the 3 roles (e.g., Admin, User, Provider) to allow evaluators to quickly test role-based UI.
+- **URL State Synchronization**: All filtering, sorting, searching, and pagination must be reflected in the URL (e.g., `?page=2&status=active`) using `useSearchParams`, allowing users to bookmark or share specific views.
 - **No Placeholder Content**: All UI elements must be fully implemented and populated with real data. The use of "Lorem ipsum" text, placeholder images, or incomplete demo components is strictly prohibited.
-- **Skeleton Loaders & Partial Rendering**: Implement skeleton loaders (`loading.tsx`) and partial rendering techniques to provide immediate visual feedback during data fetching, avoiding full-page spinners or blank screens.
-- **Data Visualization**: Admin or Manager dashboards must include at least one data visualization component (e.g., charts/graphs using Recharts or Chart.js).
-- **Advanced Filtering**: Implement faceted search UIs (e.g., e-commerce style sidebar filters) with URL synchronization.
-- **Performance Optimization**: Use `next/image` for all images and avoid unnecessary client-side re-renders.
-- **Robust Error Handling**: Graceful error handling using `error.tsx` boundaries and toast notifications (e.g., Sonner or React Hot Toast) for API failures.
+- **Performance & Loading States**: Use `next/image` for all images, implement skeleton loaders (`loading.tsx`) for every data-fetching page, and avoid unnecessary client-side re-renders. Use Server Components by default.
+- **Error Handling**: Implement graceful error handling using `error.tsx` boundaries and toast notifications (e.g., Sonner or React Hot Toast) for API failures. Never show a blank screen or unhandled crash to the user.
 
 ---
 
@@ -72,42 +74,6 @@ The login page must feature a clear, structured layout with separate, easily acc
 └─────────────────────────────────────────────┘
 ```
 *Note: Each **Demo Login** button should automatically authenticate the user with the corresponding demo account and redirect them to the appropriate role-specific dashboard.*
-
----
-
-## 📋 Project Requirements
-
-> 💡 **Note:** Read these carefully. While not every single point is strictly fixed, you must follow this general guideline to ensure your project meets expectations.
-
-## 🛠️ Tech Stack
-
-| Category | Technology | Purpose |
-|----------|------------|---------|
-| **Framework** | Next.js (App Router), TypeScript | Server-side rendering, routing, and type safety |
-| **Styling & UI** | Tailwind CSS, shadcn/ui | Responsive, accessible, and modern UI development |
-| **State Management** | TanStack Query + Zustand / Context | Server-state caching and global client-state management |
-| **Forms & Validation** | React Hook Form / `@tanstack/react-form` + Zod | Type-safe form handling and client-side validation |
-| **Authentication** | NextAuth.js / Custom JWT + Middleware | Secure session management and protected routes |
-| **Payment Integration** | Stripe / SSLCommerz (Test Mode) | Real payment processing with success/cancel flows |
-| **Data Visualization** | Recharts / Chart.js | Admin dashboard charts and analytics |
-| **Media & Icons** | `next/image`, Lucide React | Optimized image delivery and consistent iconography |
-| **Notifications** | Sonner / React Hot Toast | User-friendly toast notifications |
-| **Deployment** | Vercel / Netlify / Cloudflare | Production frontend deployment with edge network |
-
-> **Note:** You do not need to use every technology in every project. Choose technologies based on the actual requirements of your specific project.
-
---- 
-
-## 🎯 Core Project Rules
-
-- **Roles**: Each project must have **3 fixed primary roles** (e.g., Customer, Provider, Admin). Role permissions must be strictly enforced at both route level (Middleware) and UI level (conditional rendering).
-- **Payment Integration**: This is **MANDATORY**. You must integrate **Stripe or SSLCommerz** (Test Mode). Your frontend must handle payment initiation, success redirect, and cancellation redirect. *Cash on Delivery, Pay Later, or fake manual status updates are NOT accepted.*
-- **Real API Only**: You must connect to a real backend API (your B7A6 project or a provided one). Mock data, hardcoded JSON, or placeholder content is **NOT accepted** for any core workflow.
-- **One-Click Demo Login**: Your login page must feature distinct, one-click "Demo Login" buttons for each of the 3 roles (e.g., Admin, User, Provider) to allow evaluators to quickly test role-based UI.
-- **URL State Synchronization**: All filtering, sorting, searching, and pagination must be reflected in the URL (e.g., `?page=2&status=active`) using `useSearchParams`, allowing users to bookmark or share specific views.
-- **No Placeholder Content**: All UI elements must be fully implemented and populated with real data. The use of "Lorem ipsum" text, placeholder images, or incomplete demo components is strictly prohibited.
-- **Performance & Loading States**: Use `next/image` for all images, implement skeleton loaders (`loading.tsx`) for every data-fetching page, and avoid unnecessary client-side re-renders. Use Server Components by default.
-- **Error Handling**: Implement graceful error handling using `error.tsx` boundaries and toast notifications (e.g., Sonner or React Hot Toast) for API failures. Never show a blank screen or unhandled crash to the user.
 
 ---
 
