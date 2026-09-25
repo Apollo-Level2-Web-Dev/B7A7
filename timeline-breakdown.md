@@ -13,7 +13,7 @@
 ### 🔵 Day 2 — Authentication & Protected Routes
 - [ ] Implement Login, Register, and Logout UI flows.
 - [ ] Set up authentication state management (NextAuth.js or custom JWT via HTTP-only cookies).
-- [ ] Create Next.js Middleware (`middleware.ts`) for route protection and role-based redirects.
+- [ ] Create Next.js Middleware (`proxy.ts` or `middleware.ts`) for route protection and role-based redirects.
 - [ ] **Mandatory:** Implement the **One-Click Demo Login** buttons on the login page for all 3 roles (e.g., "Login as Admin", "Login as User").
 - [ ] Build the foundational wireframe/skeleton dashboards for all 3 roles to establish the layout.
 
@@ -24,7 +24,7 @@
 - [ ] Add loading skeletons (`loading.tsx`), empty states, and global error boundaries (`error.tsx`) with toast notifications for all data views.
 - [ ] Implement at least one **Data Visualization** component (e.g., Recharts/Chart.js) for the Admin/Manager dashboard.
 
-### 🟠 Day 4 — Complex Workflows, Payments & Optimization *(Updated)*
+### 🟠 Day 4 — Complex Workflows, Payments & Optimization
 - [ ] Implement complex forms using **React Hook Form or `@tanstack/react-form` + Zod** (e.g., multi-step wizards, file/image uploads to Cloudinary).
 - [ ] Add **Optimistic UI updates** for instant feedback actions (e.g., toggling a status, adding to cart, or upvoting).
 - [ ] Implement global client state (Zustand/Context) for UI-specific states (e.g., sidebar toggle, multi-step form data persistence).
